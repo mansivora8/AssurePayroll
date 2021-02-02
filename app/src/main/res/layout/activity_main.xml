@@ -51,10 +51,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an Account?\nRegister here."
-        android:onClick="register"
-        android:layout_marginTop="10dp"
+        android:text="Don't have an Account?"
         android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register here."
+        android:onClick="register"
+        android:textAlignment="center"
+        android:textColor="@color/lightblue"
         android:gravity="center_horizontal" />
 
 </LinearLayout>
