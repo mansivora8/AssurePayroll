@@ -42,6 +42,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.register);
         etName=findViewById(R.id.etName);
         etPhone=findViewById(R.id.etPhone);
