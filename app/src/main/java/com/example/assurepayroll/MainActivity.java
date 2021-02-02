@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +31,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText etEmail,etPassword;
     private String email,password;
-    private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php";
+    //private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php"; // mansi
+    private String URL="http://192.168.0.157:7071/SDP_Payroll/login.php"; //maitri's URL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,22 @@ public class MainActivity extends AppCompatActivity {
     {
         email=etEmail.getText().toString().trim();
         password=etPassword.getText().toString().trim();
+        if(email.isEmpty())
+        {
+            etEmail.setError("Please enter Email Id");
+            etEmail.requestFocus();
+        }
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
+            etEmail.setError("Please enter Valid Email Id");
+            etEmail.requestFocus();
+        }
+        else if(password.isEmpty())
+        {
+            etEmail.setError("Please enter Password");
+            etEmail.requestFocus();
+        }
+
         if(!email.equals("") && !password.equals(""))
         {
             StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -32,7 +33,8 @@ public class Register extends AppCompatActivity {
 
     private TextView tvStatus;
     private Button btnRegister;
-    private String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
+   // private String URL="http://192.168.43.231:80/SDP_Payroll/register.php";//mansi's URL
+    private String URL="http://192.168.0.157:7071/SDP_Payroll/register.php"; //maitri's URL
     private String email,password,reenterPassword,name,phone,dob,address;
     private static final String TAG = "Register";
 
@@ -81,12 +83,82 @@ public class Register extends AppCompatActivity {
         dob=etDate.getText().toString().trim();
         email=etEmail.getText().toString().trim();
         password=etPassword.getText().toString().trim();
-        reenterPassword=etPassword.getText().toString().trim();
-        if(!password.equals(reenterPassword)){
+        reenterPassword=etReenterPassword.getText().toString().trim();
+     /*   if(!password.equals(reenterPassword)){
             Toast.makeText(this,"Password Mismatch",Toast.LENGTH_SHORT).show();
 
+        }*/
+        if(name.isEmpty())
+        {
+            etName.setError("Please enter Full Name");
+            etName.requestFocus();
         }
-        else if(!address.equals("") && !dob.equals("") && !name.equals("") && !phone.equals("") && !email.equals("") && !password.equals("")){
+        else if(!name.matches("[a-z,A-Z]*"))
+        {
+            etName.setError("Name must contains only Characters");
+            etName.requestFocus();
+        }
+        else if(phone.isEmpty())
+        {
+            etPhone.setError("Please enter Mobile No.");
+            etPhone.requestFocus();
+        }
+        else if(!phone.matches("[0-9]{10}"))
+        {
+            etPhone.setError("Please enter valid 10 Digit Mobile Number");
+            etPhone.requestFocus();
+        }
+        else if(address.isEmpty())
+        {
+            etAddress.setError("Please enter Address");
+            etAddress.requestFocus();
+        }
+        else if(dob.isEmpty())
+        {
+            etDate.setError("Please enter Date of Birth");
+            etDate.requestFocus();
+        }
+
+        else if(email.isEmpty())
+        {
+            etEmail.setError("Please enter Email Id");
+            etEmail.requestFocus();
+        }
+        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
+            etEmail.setError("Please enter Valid Email Id");
+            etEmail.requestFocus();
+        }
+
+        else if(password.isEmpty())
+        {
+            etPassword.setError("Please enter Password");
+            etPassword.requestFocus();
+        }
+        else if(password.length()<10)
+        {
+            etPassword.setError("Password must be of atleast 10 Characters");
+            etPassword.requestFocus();
+        }
+        else if(reenterPassword.isEmpty())
+        {
+            etReenterPassword.setError("Please Reenter Password");
+            etReenterPassword.requestFocus();
+        }
+        else if(!password.equals(reenterPassword))
+        {
+
+
+            etReenterPassword.setError("Password does not match");
+
+            etReenterPassword.requestFocus();
+        }
+        /*else if(reenterPassword.length()<10)
+        {
+            etPassword.setError("Password must be of atleast 10 Characters");
+            etPassword.requestFocus();
+        }*/
+        else  if(!address.equals("") && !dob.equals("") && !name.equals("") && !phone.equals("") && !email.equals("") && !password.equals("")){
             Log.i(TAG, "Password in not null");
             StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override

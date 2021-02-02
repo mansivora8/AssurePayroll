@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:gravity="center"
@@ -98,8 +100,7 @@
                 android:ems="10"
                 android:backgroundTint="@color/lightblue"
                 android:layout_marginBottom="20dp"
-                android:inputType="textPersonName"
-                android:hint="0000-00-00" />
+                android:inputType="textPersonName" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
@@ -130,14 +131,26 @@
                 android:layout_marginLeft="5dp"
                 android:paddingBottom="5dp"/>
 
-            <EditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
+            <!--<com.google.android.material.textfield.TextInputLayout
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:backgroundTint="@color/lightblue"
-                android:layout_marginBottom="20dp"
-                android:inputType="textPassword"/>
+                android:layout_width="match_parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="92dp"
+                app:passwordToggleEnabled="true"
+                tools:layout_editor_absoluteY="248dp">-->
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:backgroundTint="@color/lightblue"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="textPassword"
+                    />
+
+          <!--  </com.google.android.material.textfield.TextInputLayout>-->
+
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
