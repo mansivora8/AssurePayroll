@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_newapp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add New Employee"
+                android:textColor="@color/lightblue"
+                android:textSize="20dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="center_horizontal"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Employee Id"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/eid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="text"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Employee Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/ename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="text"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Employee Contact No"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="phone"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Date of Birth"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="date"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Joining Date"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/joiningdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="date"/>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Bank Account No"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/accno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="text"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="City"
+                    android:textColorHint="@color/lightblue"
+                    android:ems="10"
+                    android:inputType="text"/>
+                <EditText
+                    android:id="@+id/state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:hint="State"
+                    android:textColorHint="@color/lightblue"
+                    android:ems="10"
+                    android:inputType="text"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Employee"
+                android:layout_marginTop="30dp"
+                android:onClick="Add"
+                android:background="@color/lightblue"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
