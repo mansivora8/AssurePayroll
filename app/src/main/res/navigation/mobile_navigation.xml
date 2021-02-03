@@ -27,14 +27,21 @@
         android:id="@+id/nav_attendance"
         android:name="com.example.assurepayroll.ui.gallery.GalleryFragment"
         android:label="Attendance"
-        tools:layout="@layout/activity_attendance"
+        tools:layout="@layout/admin_activity_attendance"
         />
 
     <fragment
         android:id="@+id/nav_payslip"
-        android:name="com.example.assurepayroll.ui.slideshow.SlideshowFragment"
+        android:name="com.example.assurepayroll.ui.gallery.GalleryFragment"
         android:label="Payslip"
-        tools:layout="@layout/activity_payslip"
+        tools:layout="@layout/admin_activity_payslip"
+        />
+
+    <fragment
+        android:id="@+id/nav_addemp"
+        android:name="com.example.assurepayroll.Addemp"
+        android:label="@string/menu_addemp"
+        tools:layout="@layout/addemp_fragment"
         />
 
 </navigation>

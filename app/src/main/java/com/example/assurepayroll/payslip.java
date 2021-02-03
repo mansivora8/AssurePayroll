@@ -15,14 +15,14 @@ public class payslip extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payslip);
+        setContentView(R.layout.admin_activity_payslip);
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.payslip);
+        bottomNavigationView.setSelectedItemId(R.id.nav_payslip);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.payslip:
+                    case R.id.nav_payslip:
                         return true;
 
                     case R.id.attendance:

@@ -15,7 +15,7 @@ public class Attendance extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attendance);
+        setContentView(R.layout.admin_activity_attendance);
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.attendance);
@@ -31,7 +31,7 @@ public class Attendance extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.payslip:
+                    case R.id.nav_payslip:
                         startActivity(new Intent(getApplicationContext(),payslip.class ) );
                         overridePendingTransition(0,0);
                         return true;

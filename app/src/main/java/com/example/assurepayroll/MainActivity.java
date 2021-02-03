@@ -1,15 +1,14 @@
 package com.example.assurepayroll;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -20,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputLayout;
 //import com.google.android.gms.tasks.OnCompleteListener;
 //import com.google.android.gms.tasks.Task;
 //import com.google.firebase.auth.AuthResult;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_login);
         getSupportActionBar().hide();
         eid=password="";
         etEid=findViewById(R.id.etEid);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     if (response.equals("admin")) {
                         Toast.makeText(MainActivity.this, "Admin login successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, Success.class);
+                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                         startActivity(intent);
                         finish();
                     }
@@ -110,6 +110,25 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             Toast.makeText(this,"Fields cannot be empty!",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void visible(View view) {
+        if(view.getId()==R.id.show_pass_btn){
+
+            if(etPassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
+                ((ImageView)(view)).setImageResource(R.drawable.show_password);
+
+                //Show Password
+                etPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            }
+            else{
+                ((ImageView)(view)).setImageResource(R.drawable.show_password);
+
+                //Hide Password
+                etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+            }
         }
     }
   /*  public void register(View view)
