@@ -29,13 +29,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
-    private EditText etEmail,etPassword,etReenterPassword,etName,etPhone,etAddress,etDate;
+    private EditText etEmail,etPassword,etReenterPassword,etName,etPhone,etAddress,etDate,etEid;
 
     private TextView tvStatus;
     private Button btnRegister;
    // private String URL="http://192.168.43.231:80/SDP_Payroll/register.php";//mansi's URL
     private String URL="http://192.168.0.157:7071/SDP_Payroll/register.php"; //maitri's URL
-    private String email,password,reenterPassword,name,phone,dob,address;
+    private String email,password,reenterPassword,name,phone,dob,address,eid;
     private static final String TAG = "Register";
 
     DatePickerDialog.OnDateSetListener setListener;
@@ -44,22 +44,23 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.register);
-        etName=findViewById(R.id.etName);
+        etEid=findViewById(R.id.etEid);
+       /* etName=findViewById(R.id.etName);
         etPhone=findViewById(R.id.etPhone);
         etDate=findViewById(R.id.etDate);
         etAddress=findViewById(R.id.etAddress);
-      etEmail=findViewById(R.id.etEmail);
+      etEmail=findViewById(R.id.etEmail);*/
       etPassword=findViewById(R.id.etPassword);
-      etReenterPassword=findViewById(R.id.etReenterPassword);
+  //    etReenterPassword=findViewById(R.id.etReenterPassword);
       tvStatus=findViewById(R.id.tvStatus);
       btnRegister=findViewById(R.id.btnRegister);
-      email=password=reenterPassword=name=phone=address=dob="";
-
-        Calendar calendar=Calendar.getInstance();
+     // email=password=reenterPassword=name=phone=address=dob="";
+        eid=password="";
+        /*Calendar calendar=Calendar.getInstance();
         final int year=calendar.get(Calendar.YEAR);
         final int month=calendar.get(Calendar.MONTH);
-        final int day=calendar.get(Calendar.DAY_OF_MONTH);
-        etDate.setOnClickListener(new View.OnClickListener() {
+        final int day=calendar.get(Calendar.DAY_OF_MONTH);*/
+     /*   etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog datePickerDialog=new DatePickerDialog(
@@ -73,23 +74,21 @@ public class Register extends AppCompatActivity {
                 },year,month,day);
                 datePickerDialog.show();
             }
-        });
+        });*/
     }
 
     public  void save(View view)
     {
-        name=etName.getText().toString().trim();
+      /*  name=etName.getText().toString().trim();
         phone=etPhone.getText().toString().trim();
         address=etAddress.getText().toString().trim();
         dob=etDate.getText().toString().trim();
         email=etEmail.getText().toString().trim();
         password=etPassword.getText().toString().trim();
-        reenterPassword=etReenterPassword.getText().toString().trim();
-     /*   if(!password.equals(reenterPassword)){
-            Toast.makeText(this,"Password Mismatch",Toast.LENGTH_SHORT).show();
-
-        }*/
-        if(name.isEmpty())
+        reenterPassword=etReenterPassword.getText().toString().trim();*/
+        eid=etEid.getText().toString().trim();
+        password=etPassword.getText().toString().trim();
+       /* if(name.isEmpty())
         {
             etName.setError("Please enter Full Name");
             etName.requestFocus();
@@ -159,7 +158,7 @@ public class Register extends AppCompatActivity {
             etPassword.setError("Password must be of atleast 10 Characters");
             etPassword.requestFocus();
         }*/
-        else  if(!address.equals("") && !dob.equals("") && !name.equals("") && !phone.equals("") && !email.equals("") && !password.equals("")){
+         if(!eid.equals(("")) && !password.equals("")){
             Log.i(TAG, "Password in not null");
             StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
@@ -186,11 +185,12 @@ public class Register extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String,String> data=new HashMap<String, String>();
-                    data.put("name",name);
+                   /* data.put("name",name);
                     data.put("phone",phone);
                     data.put("address",address);
                     data.put("dob",dob);
-                    data.put("email",email);
+                    data.put("email",email);*/
+                    data.put("eid",eid);
                     data.put("password",password);
                     Log.d(TAG, data.toString());
                     return data;

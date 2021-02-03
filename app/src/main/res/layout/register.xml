@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/logo" />
 
-            <com.google.android.material.textview.MaterialTextView
+           <!-- <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Full Name"
@@ -119,7 +119,27 @@
                 android:ems="10"
                 android:backgroundTint="@color/lightblue"
                 android:layout_marginBottom="20dp"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress" />-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="18dp"
+                android:textColor="@color/lightblue"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/etEid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"
+                android:inputType="textPersonName"
+                />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
@@ -139,7 +159,7 @@
                 app:passwordToggleEnabled="true"
                 tools:layout_editor_absoluteY="248dp">-->
 
-                <EditText
+            <EditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -152,7 +172,7 @@
           <!--  </com.google.android.material.textfield.TextInputLayout>-->
 
 
-            <com.google.android.material.textview.MaterialTextView
+            <!--<com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Confirm Password"
@@ -169,7 +189,7 @@
                 android:ems="10"
                 android:backgroundTint="@color/lightblue"
                 android:layout_marginBottom="20dp"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"/>-->
 
             <Button
                 android:id="@+id/btnRegister"
@@ -191,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
-                android:text="Don't have an account"
+                android:text="Already have an account?"
                 android:textAlignment="center" />
 
             <TextView

@@ -29,8 +29,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText etEmail,etPassword;
-    private String email,password;
+    private EditText etEid,etPassword;
+    private String eid,password;
     //private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php"; // mansi
     private String URL="http://192.168.0.157:7071/SDP_Payroll/login.php"; //maitri's URL
     @Override
@@ -38,45 +38,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        email=password="";
-        etEmail=findViewById(R.id.etEmail);
+        eid=password="";
+        etEid=findViewById(R.id.etEid);
         etPassword=findViewById(R.id.etPassword);
     }
     public void login(View view)
     {
-        email=etEmail.getText().toString().trim();
+        eid=etEid.getText().toString().trim();
         password=etPassword.getText().toString().trim();
-        if(email.isEmpty())
+        if(eid.isEmpty())
         {
-            etEmail.setError("Please enter Email Id");
-            etEmail.requestFocus();
-        }
-        else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
-        {
-            etEmail.setError("Please enter Valid Email Id");
-            etEmail.requestFocus();
+            etEid.setError("Please enter Employee Id");
+            etEid.requestFocus();
         }
         else if(password.isEmpty())
         {
-            etEmail.setError("Please enter Password");
-            etEmail.requestFocus();
+            etPassword.setError("Please enter Password");
+            etPassword.requestFocus();
         }
 
-        if(!email.equals("") && !password.equals(""))
+        else if(!eid.equals("") && !password.equals(""))
         {
             StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    if (response.equals("success")) {
-                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    if (response.equals("admin")) {
+                        Toast.makeText(MainActivity.this, "Admin login successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, Success.class);
                         startActivity(intent);
                         finish();
-                    } else if (response.equals("failure")) {
-                        Toast.makeText(MainActivity.this, "Invalid EmailId/Password", Toast.LENGTH_SHORT).show();
                     }
+                    else if (response.equals("failure")) {
+                        Toast.makeText(MainActivity.this, "Invalid Employee Id/Password", Toast.LENGTH_SHORT).show();
+                    }
+                    /*else if (response.equals("employee")) {
+                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                    }*/
+
                     else
                     {
-                        Toast.makeText(MainActivity.this,response.toString(), Toast.LENGTH_SHORT).show();
+                        //employee login
+                      //  Toast.makeText(MainActivity.this,response.toString(), Toast.LENGTH_SHORT).show();Intent intent = new Intent(MainActivity.this, Success.class);
+                        //                        startActivity(intent);
+                        //                        finish();
+
                     }
                 }
             }, new Response.ErrorListener() {
@@ -88,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String,String> data=new HashMap<String,String>();
-                    data.put("email",email);
+                    data.put("eid",eid);
                     data.put("password",password);
                     return data;
                 }
@@ -107,10 +112,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Fields cannot be empty!",Toast.LENGTH_SHORT).show();
         }
     }
-    public void register(View view)
+  /*  public void register(View view)
     {
         Intent intent=new Intent(this,Register.class);
         startActivity(intent);
         finish();
-    }
+    }*/
 }
