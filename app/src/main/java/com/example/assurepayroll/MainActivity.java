@@ -63,9 +63,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     if (response.equals("admin")) {
-                        Toast.makeText(MainActivity.this, "Admin login successful", Toast.LENGTH_SHORT).show();
+
                         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                         startActivity(intent);
+                        Toast.makeText(MainActivity.this, "Admin login successful", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     else if (response.equals("failure")) {

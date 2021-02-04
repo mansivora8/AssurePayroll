@@ -5,7 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".Register">
+
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,16 +19,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
+           <!-->androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_newapp" />
+                android:src="@drawable/ic_newapp" />-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add New Employee"
+                android:text="Employee Details"
                 android:textColor="@color/lightblue"
                 android:textSize="20dp"
                 android:layout_marginBottom="40dp"
@@ -55,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:paddingBottom="5dp"
-                android:text="Employee Name"
+                android:text="Name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/lightblue"
                 android:textSize="18dp" />
@@ -68,16 +71,36 @@
                 android:backgroundTint="@color/lightblue"
                 android:layout_marginBottom="20dp"
                 android:inputType="text"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:paddingBottom="5dp"
+                android:text="Email Id"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/lightblue"
+                android:textSize="18dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:backgroundTint="@color/lightblue"
+                android:layout_marginBottom="20dp"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:paddingBottom="5dp"
-                android:text="Employee Contact No"
+                android:text="Contact No"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/lightblue"
                 android:textSize="18dp" />
+
+
 
             <EditText
                 android:id="@+id/contact"
@@ -175,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:text="Add Employee"
                 android:layout_marginTop="30dp"
-                android:onClick="Add"
+                android:onClick="save"
                 android:background="@color/lightblue"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
