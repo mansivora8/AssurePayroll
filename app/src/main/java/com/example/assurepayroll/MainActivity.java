@@ -31,8 +31,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private EditText etEid,etPassword;
     private String eid,password;
-    //private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php"; // mansi
-    private String URL="http://192.168.0.157:7071/SDP_Payroll/login.php"; //maitri's URL
+    private final String URL="http://192.168.43.231:80/SDP_Payroll/login.php"; // mansi
+    //private String URL="http://192.168.0.157:7071/SDP_Payroll/login.php"; //maitri's URL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         if(view.getId()==R.id.show_pass_btn){
 
             if(etPassword.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())){
-                ((ImageView)(view)).setImageResource(R.drawable.show_password);
+                ((ImageView)(view)).setImageResource(R.drawable.hide_password);
 
                 //Show Password
                 etPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
