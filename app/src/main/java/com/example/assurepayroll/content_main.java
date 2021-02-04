@@ -15,7 +15,7 @@ public class content_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_content_main);
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        /*BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -25,17 +25,17 @@ public class content_main extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_attendance:
-                        startActivity(new Intent(getApplicationContext(),Attendance.class ) );
+                        startActivity(new Intent(getApplicationContext(),attendance.class ) );
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.nav_payslip:
-                        startActivity(new Intent(getApplicationContext(),payslip.class ) );
+                    case R.id.nav_employee_list:
+                        startActivity(new Intent(getApplicationContext(),employee_list.class ) );
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
-        });
+        });*/
     }
 }

@@ -19,7 +19,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.textfield.TextInputLayout;
 //import com.google.android.gms.tasks.OnCompleteListener;
 //import com.google.android.gms.tasks.Task;
 //import com.google.firebase.auth.AuthResult;
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     if (response.equals("admin")) {
 
-                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                        Intent intent = new Intent(MainActivity.this, admin_dashboard.class);
                         startActivity(intent);
                         Toast.makeText(MainActivity.this, "Admin login successful", Toast.LENGTH_SHORT).show();
                         finish();

@@ -6,42 +6,54 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
+        android:id="@+id/nav_addemp"
+        android:name="com.example.assurepayroll.add_employee"
+        tools:layout="@layout/fragment_add_employee"
+        android:label="@string/menu_addemp"
+        />
+    <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.assurepayroll.ui.home.HomeFragment"
+        android:name="com.example.assurepayroll.nav_home"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_nav_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.assurepayroll.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_profile"
+        android:name="com.example.assurepayroll.profile"
         android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.assurepayroll.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_logout"
+        android:name="com.example.assurepayroll.logout"
         android:label="@string/menu_logout"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_logout" />
+
+    <fragment
+        android:id="@+id/nav_leave"
+        android:name="com.example.assurepayroll.leave"
+        android:label="@string/menu_leave"
+        tools:layout="@layout/fragment_leave" />
 
     <fragment
         android:id="@+id/nav_attendance"
-        android:name="com.example.assurepayroll.ui.gallery.GalleryFragment"
-        android:label="Attendance"
-        tools:layout="@layout/admin_activity_attendance"
+        android:name="com.example.assurepayroll.attendance"
+        android:label="@string/menu_attendance"
+        tools:layout="@layout/fragment_attendance"
         />
 
     <fragment
         android:id="@+id/nav_payslip"
-        android:name="com.example.assurepayroll.ui.gallery.GalleryFragment"
-        android:label="Payslip"
-        tools:layout="@layout/admin_activity_payslip"
+        android:name="com.example.assurepayroll.payslip"
+        android:label="@string/menu_payslip"
+        tools:layout="@layout/fragment_payslip"
         />
 
     <fragment
-        android:id="@+id/nav_addemp"
-        android:name="com.example.assurepayroll.Addemo"
-        android:label="@string/menu_addemp"
-        tools:layout="@layout/addemp_fragment"
+        android:id="@+id/nav_employee_list"
+        android:name="com.example.assurepayroll.employee_list"
+        android:label="@string/menu_employee"
+        tools:layout="@layout/fragment_employee_list"
         />
 
 </navigation>
