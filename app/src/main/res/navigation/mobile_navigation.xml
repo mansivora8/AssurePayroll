@@ -63,7 +63,7 @@
         android:label="Employee"
         />
     <fragment
-        android:id="@+id/nav_attendance"
+        android:id="@+id/nav_attendence"
         android:name="com.example.assurepayroll.attendence"
         tools:layout="@layout/fragment_attendence"
         android:label="Attendence"

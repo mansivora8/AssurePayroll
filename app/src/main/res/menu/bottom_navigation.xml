@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_user"
         />
     <item
-        android:id="@+id/nav_attendance"
+        android:id="@+id/nav_attendence"
         android:title="Attendence"
         android:icon="@drawable/ic_attendance"
         />

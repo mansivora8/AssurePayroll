@@ -15,7 +15,7 @@ public class content_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_content_main);
 
-        /*BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+       /* BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -24,8 +24,8 @@ public class content_main extends AppCompatActivity {
                     case R.id.nav_home:
                         return true;
 
-                    case R.id.nav_attendance:
-                        startActivity(new Intent(getApplicationContext(),attendance.class ) );
+                    case R.id.nav_attendence:
+                        startActivity(new Intent(getApplicationContext(),attendence.class ) );
                         overridePendingTransition(0,0);
                         return true;
 
