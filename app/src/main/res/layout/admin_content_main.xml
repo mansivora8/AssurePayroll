@@ -8,7 +8,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_main">
 
-    <fragment
+   <fragment
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
@@ -19,14 +19,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
 
-   <!--<com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bottom_navigation"
-        app:itemBackground="@color/white"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
-        app:menu="@menu/bottom_navigation"
-        android:layout_alignParentBottom="true"
-        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"/>-->
-</RelativeLayout>
+    <!-- <com.google.android.material.bottomnavigation.BottomNavigationView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/bottom_navigation"
+         app:itemBackground="@color/white"
+         app:itemTextColor="@drawable/selector"
+         app:itemIconTint="@drawable/selector"
+         app:menu="@menu/bottom_navigation"
+         android:layout_alignParentBottom="true"
+         app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"/>-->
+ </RelativeLayout>

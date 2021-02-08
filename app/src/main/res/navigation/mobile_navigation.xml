@@ -35,12 +35,7 @@
         android:label="@string/menu_leave"
         tools:layout="@layout/fragment_leave" />
 
-    <fragment
-        android:id="@+id/nav_attendance"
-        android:name="com.example.assurepayroll.attendance"
-        android:label="@string/menu_attendance"
-        tools:layout="@layout/fragment_attendance"
-        />
+
 
     <fragment
         android:id="@+id/nav_payslip"
@@ -49,11 +44,29 @@
         tools:layout="@layout/fragment_payslip"
         />
 
-    <fragment
+   <!--- <fragment
         android:id="@+id/nav_employee_list"
         android:name="com.example.assurepayroll.employee_list"
         android:label="@string/menu_employee"
         tools:layout="@layout/fragment_employee_list"
+        />
+     <fragment
+       android:id="@+id/nav_attendance"
+       android:name="com.example.assurepayroll.attendance"
+       android:label= "@string/menu_attendance"
+       tools:layout="@layout/fragment_attendance"
+       />-->
+    <fragment
+        android:id="@+id/nav_employee_list"
+        android:name="com.example.assurepayroll.employee_list"
+        tools:layout="@layout/fragment_employee_list"
+        android:label="Employee"
+        />
+    <fragment
+        android:id="@+id/nav_attendance"
+        android:name="com.example.assurepayroll.attendence"
+        tools:layout="@layout/fragment_attendence"
+        android:label="Attendence"
         />
 
 </navigation>
