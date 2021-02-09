@@ -3,13 +3,9 @@ package com.example.assurepayroll;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,5 +14,28 @@ public class content_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_content_main);
+
+       /* BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_home:
+                        return true;
+
+                    case R.id.nav_attendence:
+                        startActivity(new Intent(getApplicationContext(),attendence.class ) );
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.nav_employee_list:
+                        startActivity(new Intent(getApplicationContext(),employee_list.class ) );
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });*/
     }
 }
