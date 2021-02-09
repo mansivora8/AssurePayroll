@@ -4,6 +4,10 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
+import android.content.Intent;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.view.ViewGroup;
 
 /**
@@ -58,6 +62,7 @@ public class nav_home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nav_home, container, false);
+        ViewGroup root=(ViewGroup) inflater.inflate(R.layout.fragment_nav_home, container, false);
+        return root;
     }
 }
