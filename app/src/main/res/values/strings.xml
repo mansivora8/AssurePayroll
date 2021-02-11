@@ -10,7 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_leave">Leave</string>
-    <string name="menu_payslip">Payslip</string>
+    <string name="menu_payslip">Generate Payslip</string>
     <string name="menu_attendance">Attendance</string>
     <string name="menu_employee">Employee</string>
     <string name="menu_addemp">Add Employee</string>

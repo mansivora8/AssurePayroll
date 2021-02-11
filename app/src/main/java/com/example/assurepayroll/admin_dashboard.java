@@ -29,7 +29,7 @@ public class admin_dashboard extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_employee_list, R.id.nav_attendence)
+                R.id.nav_home, R.id.nav_leave, R.id.nav_payslip,R.id.nav_addemp,R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
