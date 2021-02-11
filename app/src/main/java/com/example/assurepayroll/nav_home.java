@@ -1,6 +1,9 @@
 package com.example.assurepayroll;
 
+import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +15,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  *
  */
-public class nav_home extends Fragment {
-
+public class nav_home extends Fragment implements View.OnClickListener {
+    CardView c1,c2,c3;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -58,6 +61,37 @@ public class nav_home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nav_home, container, false);
+        View root= inflater.inflate(R.layout.fragment_nav_home, container, false);
+        c1=(CardView)root.findViewById(R.id.employee_card);
+        c2=(CardView)root.findViewById(R.id.attendance_card);
+        c3=(CardView)root.findViewById(R.id.payslip_card);
+        c1.setOnClickListener(this);
+        c2.setOnClickListener(this);
+        c3.setOnClickListener(this);
+        return root;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i;
+        switch (v.getId()){
+            case R.id.employee_card:
+                i=new Intent(getActivity(),employee_list.class);
+                startActivity(i);
+                break;
+
+            case R.id.attendance_card:
+                i=new Intent(getActivity(),attendance.class);
+                startActivity(i);
+                break;
+
+            case R.id.payslip_card:
+                i=new Intent(getActivity(),display_payslips.class);
+                startActivity(i);
+                break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
+        }
     }
 }
