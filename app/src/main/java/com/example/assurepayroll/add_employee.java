@@ -1099,6 +1099,10 @@ ArrayAdapter<String> arrayAdapter_city;
                                Toast.makeText(getActivity(),"Email sending failed",Toast.LENGTH_LONG).show();
                                 //tvstatus.setText("Something went wrong!");
                             }
+                            else if (response.equals("Error in insert")) {
+                                Toast.makeText(getActivity(),"Error in insert",Toast.LENGTH_LONG).show();
+                                //tvstatus.setText("Something went wrong!");
+                            }
                             else
                             {
                                 Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
