@@ -46,7 +46,7 @@ TextView tvstatus;
 Button btnRegister;
 
 //url
-String URL="http://192.168.43.195:7071/SDP_Payroll/register.php";
+String URL="http://192.168.0.157:7071/SDP_Payroll/register.php";
 
 //strings
 String eid,name,email,contact,dob,joiningDate,accNo,status,state,city;
@@ -1092,11 +1092,11 @@ ArrayAdapter<String> arrayAdapter_city;
                         public void onResponse(String response){
                             Log.d(TAG, response);
                             if (response.equals("success")) {
-                               Toast.makeText(getActivity(),"Emloyee Inserted Successfully",Toast.LENGTH_LONG).show();
+                               Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
                                // tvstatus.setText("Emloyee Inserted Successfully");
                                 btnRegister.setClickable(false);
                             } else if (response.equals("failure")) {
-                               Toast.makeText(getActivity(),"Something went wrong!",Toast.LENGTH_LONG).show();
+                               Toast.makeText(getActivity(),"Email sending failed",Toast.LENGTH_LONG).show();
                                 //tvstatus.setText("Something went wrong!");
                             }
                             else
