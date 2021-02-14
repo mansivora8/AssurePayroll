@@ -46,7 +46,8 @@ TextView tvstatus;
 Button btnRegister;
 
 //url
-String URL="http://192.168.0.157:7071/SDP_Payroll/register.php";
+String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
+//String URL="http://192.168.0.157:7071/SDP_Payroll/register.php";
 
 //strings
 String eid,name,email,contact,dob,joiningDate,accNo,status,state,city;
@@ -1091,23 +1092,24 @@ ArrayAdapter<String> arrayAdapter_city;
                         @Override
                         public void onResponse(String response){
                             Log.d(TAG, response);
-                            if (response.equals("success")) {
-                               Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
-                               // tvstatus.setText("Emloyee Inserted Successfully");
+                            tvstatus.setText(response.toString());
+                            /*if (response.equals("success")) {
+                               //Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
+                               tvstatus.setText("Email successfully sent to:"+email);
                                 btnRegister.setClickable(false);
                             } else if (response.equals("failure")) {
-                               Toast.makeText(getActivity(),"Email sending failed",Toast.LENGTH_LONG).show();
-                                //tvstatus.setText("Something went wrong!");
+                               //Toast.makeText(getActivity(),"Email sending failed",Toast.LENGTH_LONG).show();
+                                tvstatus.setText("Email sending failed!");
                             }
                             else if (response.equals("Error in insert")) {
-                                Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
-                                //tvstatus.setText("Something went wrong!");
+                                //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
+                                tvstatus.setText(response.toString());
                             }
                             else
                             {
-                                Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
-                               // tvstatus.setText(response.toString());
-                            }
+                               // Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
+                                tvstatus.setText(response.toString());
+                            }*/
                             Log.i(TAG, response.toString());
                         }
                     },new Response.ErrorListener() {
