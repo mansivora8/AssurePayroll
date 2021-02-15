@@ -1,6 +1,7 @@
 package com.example.assurepayroll;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -46,11 +47,12 @@ TextView tvstatus;
 Button btnRegister;
 
 //url
-String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
-//String URL="http://192.168.0.157:7071/SDP_Payroll/register.php";
+//String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
+String URL="http://192.168.0.157:7071/SDP_Payroll/register.php";
 
 //strings
-String eid,name,email,contact,dob,joiningDate,accNo,status,state,city;
+String eid,name,email,dob,joiningDate,accNo,status,state,city,contact;
+
 
 static final String TAG = "Register";
 
@@ -991,7 +993,7 @@ ArrayAdapter<String> arrayAdapter_city;
 
 
         //strings
-        eid=name=email=contact=dob=joiningDate=accNo=status="";
+        eid=name=email=dob=contact=joiningDate=accNo=status="";
 
         //calender
         Calendar calendar= Calendar.getInstance();
@@ -1022,7 +1024,9 @@ ArrayAdapter<String> arrayAdapter_city;
                 eid = eteid.getText().toString().trim();
                 name = etname.getText().toString().trim();
                 email = etemail.getText().toString().trim();
+              //  String temp;
                 contact = etcontact.getText().toString().trim();
+                //contact=Integer.parseInt(temp);
                 dob = etdob.getText().toString().trim();
               //  joiningDate = etjoining.getText().toString().trim();
                 //accNo = etacc.getText().toString().trim();
@@ -1093,6 +1097,9 @@ ArrayAdapter<String> arrayAdapter_city;
                         public void onResponse(String response){
                             Log.d(TAG, response);
                             tvstatus.setText(response.toString());
+                            //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
+                           /* Intent intent = new Intent(getActivity(),admin_dashboard.class);
+                            startActivity(intent);*/
                             /*if (response.equals("success")) {
                                //Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
                                tvstatus.setText("Email successfully sent to:"+email);
