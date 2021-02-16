@@ -25,7 +25,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:backgroundTint="@color/lightblue"
-        android:hint="User Id"/>
+        android:hint="Employee Id"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"

@@ -71,18 +71,25 @@ public class MainActivity extends AppCompatActivity {
                     else if (response.equals("failure")) {
                         Toast.makeText(MainActivity.this, "Invalid Employee Id/Password", Toast.LENGTH_SHORT).show();
                     }
+                    else
+                    {
+                        Intent intent = new Intent(MainActivity.this, Success.class);
+                        startActivity(intent);
+                        Toast.makeText(MainActivity.this, "Employee login successful", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                     /*else if (response.equals("employee")) {
                         Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
                     }*/
 
-                    else
+                   /* else
                     {
                         //employee login
                       //  Toast.makeText(MainActivity.this,response.toString(), Toast.LENGTH_SHORT).show();Intent intent = new Intent(MainActivity.this, Success.class);
                         //                        startActivity(intent);
                         //                        finish();
 
-                    }
+                    }*/
                 }
             }, new Response.ErrorListener() {
                 @Override

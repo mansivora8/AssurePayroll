@@ -1096,10 +1096,10 @@ ArrayAdapter<String> arrayAdapter_city;
                         @Override
                         public void onResponse(String response){
                             Log.d(TAG, response);
-                            tvstatus.setText(response.toString());
+                           // tvstatus.setText(response.toString());
                             //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
-                           /* Intent intent = new Intent(getActivity(),admin_dashboard.class);
-                            startActivity(intent);*/
+                            Intent intent = new Intent(getActivity(),admin_dashboard.class);
+                            startActivity(intent);
                             /*if (response.equals("success")) {
                                //Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
                                tvstatus.setText("Email successfully sent to:"+email);
