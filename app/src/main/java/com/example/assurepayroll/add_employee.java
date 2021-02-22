@@ -42,16 +42,16 @@ import java.util.Random;
 public class add_employee extends Fragment {
 View view;
 //fields
-EditText eteid,etname,etemail,etcontact,etdob,etjoining,etacc;
+EditText etname,etemail,etcontact,etdob,etjoining,etacc;
 TextView tvstatus;
 Button btnRegister;
 
 //url
 //String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
-String URL="http://192.168.0.157:7071/SDP_Payroll/register.php";
+String URL="http://192.168.0.106:7071/SDP_Payroll/register.php";
 
 //strings
-String eid,name,email,dob,joiningDate,accNo,status,state,city,contact;
+String name,email,dob,joiningDate,accNo,status,state,city,contact;
 
 
 static final String TAG = "Register";
@@ -972,14 +972,14 @@ ArrayAdapter<String> arrayAdapter_city;
         //city spinner process ends
 
         //Generate random number
-        Random rnd = new Random();
+      /*  Random rnd = new Random();
         int n = 100000 + rnd.nextInt(900000);
-        eid="E-"+n;
+        eid="E-"+n;*/
 
         //find view by id
         btnRegister=view.findViewById(R.id.btnRegister);
-        eteid=view.findViewById(R.id.eid);
-        eteid.setText(String.valueOf(eid));
+        //eteid=view.findViewById(R.id.eid);
+       // eteid.setText(String.valueOf(eid));
         etname=view.findViewById(R.id.ename);
         etemail=view.findViewById(R.id.etEmail);
         etcontact=view.findViewById(R.id.contact);
@@ -993,7 +993,7 @@ ArrayAdapter<String> arrayAdapter_city;
 
 
         //strings
-        eid=name=email=dob=contact=joiningDate=accNo=status="";
+        name=email=dob=contact=joiningDate=accNo=status="";
 
         //calender
         Calendar calendar= Calendar.getInstance();
@@ -1021,7 +1021,7 @@ ArrayAdapter<String> arrayAdapter_city;
             public void onClick(View v) {
 
                 //get values
-                eid = eteid.getText().toString().trim();
+               // eid = eteid.getText().toString().trim();
                 name = etname.getText().toString().trim();
                 email = etemail.getText().toString().trim();
               //  String temp;
@@ -1037,10 +1037,10 @@ ArrayAdapter<String> arrayAdapter_city;
                 status = tvstatus.getText().toString().trim();
 
                 //validations
-                if (eid.isEmpty()) {
+             /*   if (eid.isEmpty()) {
                     eteid.setError("Employee Id is required");
                     eteid.requestFocus();
-                }
+                }*/
                 if (name.isEmpty()) {
                     etname.setError("Name is required");
                     etname.requestFocus();
@@ -1098,8 +1098,8 @@ ArrayAdapter<String> arrayAdapter_city;
                             Log.d(TAG, response);
                            // tvstatus.setText(response.toString());
                             //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(getActivity(),admin_dashboard.class);
-                            startActivity(intent);
+                            /*Intent intent = new Intent(getActivity(),admin_dashboard.class);
+                            startActivity(intent);*/
                             /*if (response.equals("success")) {
                                //Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
                                tvstatus.setText("Email successfully sent to:"+email);
@@ -1117,7 +1117,7 @@ ArrayAdapter<String> arrayAdapter_city;
                                // Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
                                 tvstatus.setText(response.toString());
                             }*/
-                            Log.i(TAG, response.toString());
+
                         }
                     },new Response.ErrorListener() {
                         @Override
@@ -1128,7 +1128,7 @@ ArrayAdapter<String> arrayAdapter_city;
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {
                             Map<String,String> data=new HashMap<String, String>();
-                            data.put("eid",eid);
+                          //  data.put("eid",eid);
                             data.put("name",name);
                             data.put("email",email);
                             data.put("contact",contact);

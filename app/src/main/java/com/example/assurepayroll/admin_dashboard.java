@@ -50,4 +50,4 @@ public class admin_dashboard extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-}
+} 

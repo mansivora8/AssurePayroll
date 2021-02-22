@@ -24,7 +24,7 @@
                 android:layout_marginBottom="40dp"
                 android:gravity="center_horizontal"/>
 
-            <com.google.android.material.textview.MaterialTextView
+           <!-- <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -41,7 +41,7 @@
                 android:backgroundTint="@color/lightblue"
                 android:editable="false"
                 android:layout_marginBottom="20dp"
-                tools:ignore="Deprecated" />
+                tools:ignore="Deprecated" />-->
            <!-- <EditText
                 android:id="@+id/eid"
                 android:layout_width="match_parent"
