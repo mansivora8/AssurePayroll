@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -48,7 +49,7 @@ Button btnRegister;
 
 //url
 //String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
-String URL="http://192.168.0.106:7071/SDP_Payroll/register.php";
+String URL="http://192.168.0.157:80/SDP_Payroll/register.php";
 
 //strings
 String name,email,dob,joiningDate,accNo,status,state,city,contact;
@@ -1092,14 +1093,17 @@ ArrayAdapter<String> arrayAdapter_city;
                 {
                     Log.i(TAG, "All data are inserted");
 
-                    StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>(){
+                    StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
+                    {
+                       // stringRequest.setRetryPolicy(new DefaultRetryPolicy(5000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
                         @Override
                         public void onResponse(String response){
                             Log.d(TAG, response);
-                           // tvstatus.setText(response.toString());
+                            tvstatus.setText(response.toString());
                             //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
-                            /*Intent intent = new Intent(getActivity(),admin_dashboard.class);
-                            startActivity(intent);*/
+                            Intent intent = new Intent(getActivity(),admin_dashboard.class);
+                            startActivity(intent);
                             /*if (response.equals("success")) {
                                //Toast.makeText(getActivity(),"Email successfully sent to:"+email,Toast.LENGTH_LONG).show();
                                tvstatus.setText("Email successfully sent to:"+email);
@@ -1143,6 +1147,11 @@ ArrayAdapter<String> arrayAdapter_city;
                             return  data;
                         }
                     };
+                    stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                            10000,
+                            DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                            DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                    ));
                     RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
                     requestQueue.add(stringRequest);
                 }
