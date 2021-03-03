@@ -48,8 +48,8 @@ TextView tvstatus;
 Button btnRegister;
 
 //url
-String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
-//String URL="http://192.168.0.157:80/SDP_Payroll/register.php";
+//String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
+String URL="http://192.168.0.157:80/SDP_Payroll/register.php";
 
 //strings
 String name,email,dob,joiningDate,accNo,status,state,city,contact;
@@ -1101,7 +1101,9 @@ ArrayAdapter<String> arrayAdapter_city;
                         public void onResponse(String response){
                             Log.d(TAG, response);
                             tvstatus.setText(response.toString());
-                            //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(),"" +
+                                    "" +
+                                    "Employee added successfully",Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getActivity(),admin_dashboard.class);
                             startActivity(intent);
                             /*if (response.equals("success")) {
