@@ -1,34 +1,45 @@
 package com.example.assurepayroll;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.leaveviewholder> {
-   // LayoutInflater inflater;
 
+    private final String Grant_URL="http://192.168.0.157:80/SDP_Payroll/grant_leave.php"; //maitri's URL
+    private final String Deny_URL="http://192.168.0.157:80/SDP_Payroll/deny_leave.php"; //maitri's URL
+    static final String TAG = "Register";
     List<LeavesData> leavesData;
-
+    private Context context;
     public LeaveAdapter(Context context,List<LeavesData> leavesData) {
-      //  this.inflater = LayoutInflater.from(context);
-        // this.data=data;
+this.context=context;
         this.leavesData=leavesData;
     }
-   // private String[] data;
-    /*public LeaveAdapter(String[] data){
-        this.data=data;
-    }*/
+
 
     @NonNull
     @Override
@@ -61,19 +72,13 @@ public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.leaveviewhol
 
 
 
-        // String month=leavesData.get(position);
+
         holder.month.setText(month);
-      //  String day=data[position];
+
         holder.day.setText(day);
-       // String year=data[position];
+
         holder.year.setText(year);
-      /*  String date=data[position];
-       holder.date.setText(date);
-        String date_data=data[position];
-        holder.date_data.setText(date_data);*/
-        //String type=data[position];
-       // holder.type.setText(leavesData.get(position).getLeave_type_id());
-      //  String type_data=data[position];
+
         String leave_type=leavesData.get(position).getLeave_type_id();
         String leave_name="";
         switch (leave_type) {
@@ -88,10 +93,92 @@ public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.leaveviewhol
                 break;
         }
         holder.type_data.setText(leave_name);
-       // String reason=data[position];
-       // holder.reason.setText(leavesData.get(position));
-       // String reason_data=data[position];
         holder.reason_data.setText(leavesData.get(position).getReson());
+
+        //button grant
+        holder.btnGrant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                StringRequest stringRequest=new StringRequest(Request.Method.POST, Grant_URL, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d(TAG, response);
+                        if(response.equals("Grant Success"))
+                        {
+                            Grant(position);
+                            Toast.makeText(context, "Leave Request Granted", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(context, response.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(v.getContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> data=new HashMap<String, String>();
+                        data.put("id",leavesData.get(position).getId());
+                        return data;
+                    }
+                };
+                stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                        10000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                ));
+                RequestQueue requestQueue= Volley.newRequestQueue(v.getContext());
+                requestQueue.add(stringRequest);
+            }
+        });
+
+        holder.btnDeny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                StringRequest stringRequest=new StringRequest(Request.Method.POST, Deny_URL, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d(TAG, response);
+                        if(response.equals("Deny Success"))
+                        {
+                            Grant(position);
+                            Toast.makeText(context, "Leave Request Denied", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(context, response.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(v.getContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> data=new HashMap<String, String>();
+                        data.put("id",leavesData.get(position).getId());
+                        return data;
+                    }
+                };
+                stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                        10000,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                ));
+                RequestQueue requestQueue= Volley.newRequestQueue(v.getContext());
+                requestQueue.add(stringRequest);
+            }
+        });
+
+
     }
 
     @Override
@@ -100,23 +187,35 @@ public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.leaveviewhol
         return leavesData.size();
     }
 
-    public class leaveviewholder extends RecyclerView.ViewHolder{
-        TextView month,day,year,date,date_data,type,type_data,reason,reason_data;
+    public static class leaveviewholder extends RecyclerView.ViewHolder{
+        TextView month,day,year,type,type_data,reason,reason_data;
+        Button btnGrant,btnDeny;
         public leaveviewholder(@NonNull View itemView) {
             super(itemView);
             month=(TextView) itemView.findViewById(R.id.month);
             day=(TextView) itemView.findViewById(R.id.day);
             year=(TextView) itemView.findViewById(R.id.year);
             month=(TextView) itemView.findViewById(R.id.month);
-       //     date=(TextView) itemView.findViewById(R.id.date);
-           // date_data=(TextView) itemView.findViewById(R.id.date_data);
             type=(TextView) itemView.findViewById(R.id.type);
             type_data=(TextView) itemView.findViewById(R.id.type_data);
             reason=(TextView) itemView.findViewById(R.id.reason);
             reason_data=(TextView) itemView.findViewById(R.id.reason_data);
+            btnGrant=itemView.findViewById(R.id.grant);
+            btnDeny=itemView.findViewById(R.id.deny);
         }
     }
     public String checkDigit (int number) {
         return number <= 9 ? "0" + number : String.valueOf(number);
+    }
+
+    public void Grant(int item)
+    {
+        leavesData.remove(item);
+        notifyItemRemoved(item);
+    }
+    public void Deny(int item)
+    {
+        leavesData.remove(item);
+        notifyItemRemoved(item);
     }
 }

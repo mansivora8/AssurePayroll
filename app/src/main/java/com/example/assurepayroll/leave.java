@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -39,12 +40,13 @@ import static android.content.ContentValues.TAG;
  */
 public class leave extends Fragment {
 
-    private String URL="http://192.168.0.157:80/SDP_Payroll/leave_admin.php"; //maitri's URL
+    private final String URL="http://192.168.0.157:80/SDP_Payroll/leave_admin.php"; //maitri's URL
     static final String TAG = "Register";
     List<LeavesData> leavesDataList;
     RecyclerView recyclerView;
     LeaveAdapter leaveAdapter;
     View view;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -88,7 +90,7 @@ public class leave extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         view= inflater.inflate(R.layout.fragment_leave, container, false);
         recyclerView=view.findViewById(R.id.leave_list);
         leavesDataList=new ArrayList<>();
@@ -119,7 +121,7 @@ public class leave extends Fragment {
                     }
 
                 }
-              //  Toast.makeText(getActivity(), (CharSequence) leavesDataList,Toast.LENGTH_SHORT).show();
+
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 leaveAdapter=new LeaveAdapter(getActivity(),leavesDataList);
@@ -131,31 +133,16 @@ public class leave extends Fragment {
                 Toast.makeText(getActivity(), error.toString().trim(), Toast.LENGTH_SHORT).show();
             }
         });
-        /*StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>()
-        {
-            @Override
-            public void onResponse(String response) {
-                Log.d(TAG, response);
-                //Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
 
-
-            }
-        },new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), error.toString().trim(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
 
         RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
         requestQueue.add(jsonArrayRequest);
 
 
 
-        /*RecyclerView rv=(RecyclerView) root.findViewById(R.id.leave_list);
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        String[] lang={"mar", "6"};
-        rv.setAdapter(new LeaveAdapter(lang));*/
+
+
+
         return view;
     }
 }

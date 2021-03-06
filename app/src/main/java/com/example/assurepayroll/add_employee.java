@@ -1073,22 +1073,7 @@ ArrayAdapter<String> arrayAdapter_city;
                     etdob.setError("Date of Birth is required");
                     etdob.requestFocus();
                 }
-                /*if (joiningDate.isEmpty()) {
-                    etjoining.setError("Please enter Full Name");
-                    etjoining.requestFocus();
-                }*/
-               /* if (accNo.isEmpty()) {
-                    etacc.setError("Please enter Full Name");
-                    etacc.requestFocus();
-                }*/
-               /* else if (city.isEmpty()) {
-                    etcity.setError("City is required");
-                    etcity.requestFocus();
-                }
-               else if (state.isEmpty()) {
-                    etstate.setError("State is required");
-                    etstate.requestFocus();
-                }*/
+
                else if ( !name.equals("") && !email.equals("") && !contact.equals("") && !dob.equals("") && !state.equals("") && !city.equals(""))
                 {
                     Log.i(TAG, "All data are inserted");
