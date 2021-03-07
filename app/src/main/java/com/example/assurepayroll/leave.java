@@ -3,6 +3,7 @@ package com.example.assurepayroll;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,8 +40,8 @@ import static android.content.ContentValues.TAG;
  * create an instance of this fragment.
  */
 public class leave extends Fragment {
-
-    private final String URL="http://192.168.0.157:80/SDP_Payroll/leave_admin.php"; //maitri's URL
+    private final String URL="http://192.168.43.231:80/SDP_Payroll/leave_admin.php";
+    //private final String URL="http://192.168.0.157:80/SDP_Payroll/leave_admin.php"; //maitri's URL
     static final String TAG = "Register";
     List<LeavesData> leavesDataList;
     RecyclerView recyclerView;
@@ -121,9 +122,8 @@ public class leave extends Fragment {
                     }
 
                 }
-
-
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
                 leaveAdapter=new LeaveAdapter(getActivity(),leavesDataList);
                 recyclerView.setAdapter(leaveAdapter);
             }
@@ -137,12 +137,6 @@ public class leave extends Fragment {
 
         RequestQueue requestQueue= Volley.newRequestQueue(getActivity());
         requestQueue.add(jsonArrayRequest);
-
-
-
-
-
-
         return view;
     }
 }
