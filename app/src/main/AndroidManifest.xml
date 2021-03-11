@@ -33,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Success" />
+        <activity android:name=".employee_single" android:label="Details" />
         <activity android:name=".Register" />
         <activity
             android:name=".admin_dashboard"

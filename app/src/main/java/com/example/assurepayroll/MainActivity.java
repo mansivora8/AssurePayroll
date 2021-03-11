@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Intent intent = new Intent(MainActivity.this, Success.class);
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);
                         Toast.makeText(MainActivity.this, "Employee login successful", Toast.LENGTH_SHORT).show();
                         finish();
@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                    /* else
                     {
                         //employee login
-                      //  Toast.makeText(MainActivity.this,response.toString(), Toast.LENGTH_SHORT).show();Intent intent = new Intent(MainActivity.this, Success.class);
                         //                        startActivity(intent);
                         //                        finish();
 
