@@ -1,6 +1,8 @@
 package com.example.assurepayroll;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,5 +18,10 @@ public class employee_single extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+
+    public void generatepayslip(View view) {
+        Intent i=new Intent(this,payslip.class);
+        startActivity(i);
     }
 }

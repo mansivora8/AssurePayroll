@@ -14,10 +14,10 @@
             android:icon="@drawable/ic_leave"
             android:title="@string/menu_leave" />
 
-        <item
+        <!--<item
             android:id="@+id/nav_payslip"
             android:icon="@drawable/ic_payslip"
-            android:title="@string/menu_payslip" />
+            android:title="@string/menu_payslip" />-->
 
         <item
             android:id="@+id/nav_addemp"
