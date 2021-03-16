@@ -125,20 +125,5 @@
             android:layout_marginLeft="5dp"
             android:text="Gujarat"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:padding="5dp"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:onClick="generatepayslip"
-            android:text="Generate Payslip"/>
-    </LinearLayout>
 
 </LinearLayout>

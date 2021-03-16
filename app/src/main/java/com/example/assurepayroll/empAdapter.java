@@ -23,10 +23,10 @@ public class empAdapter extends RecyclerView.Adapter<empAdapter.empviewholder> {
 
     @Override
     public void onBindViewHolder(@NonNull empviewholder holder, int position) {
-        String name=data[position];
+        /*String name=data[position];
         holder.name.setText(name);
         String email=data[position];
-        holder.email.setText(email);
+        holder.email.setText(email);*/
     }
 
     @Override
@@ -38,8 +38,8 @@ public class empAdapter extends RecyclerView.Adapter<empAdapter.empviewholder> {
         TextView name,email;
         public empviewholder(@NonNull View itemView) {
             super(itemView);
-            name=(TextView) itemView.findViewById(R.id.name);
-            email=(TextView) itemView.findViewById(R.id.mail);
+            /*name=(TextView) itemView.findViewById(R.id.name);
+            email=(TextView) itemView.findViewById(R.id.mail);*/
         }
     }
 
