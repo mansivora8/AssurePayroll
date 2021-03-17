@@ -25,8 +25,6 @@ public class attendanceAdapter extends RecyclerView.Adapter<attendanceAdapter.em
     public void onBindViewHolder(@NonNull empviewholder holder, int position) {
         String name=data[position];
         holder.name.setText(name);
-        String email=data[position];
-        holder.email.setText(email);
     }
 
     @Override
@@ -39,7 +37,6 @@ public class attendanceAdapter extends RecyclerView.Adapter<attendanceAdapter.em
         public empviewholder(@NonNull View itemView) {
             super(itemView);
             name=(TextView) itemView.findViewById(R.id.name);
-            email=(TextView) itemView.findViewById(R.id.mail);
         }
     }
 

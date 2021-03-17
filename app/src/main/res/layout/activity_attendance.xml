@@ -6,9 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".attendance">
 
-    <androidx.recyclerview.widget.RecyclerView
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:backgroundTint="@color/lightblue"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.021"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        tools:ignore="MissingConstraints" />
+
+    <fragment
+        android:id="@+id/fragment_att_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/attendance_list" />
+        android:layout_marginTop="70dp"
+        android:name="com.example.assurepayroll.attendance_list"
+        tools:layout="@layout/fragment_attendance_list"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
