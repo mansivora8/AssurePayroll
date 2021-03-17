@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="6dp"
     android:orientation="horizontal">
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:outlineAmbientShadowColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="20dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp"
-        android:orientation="vertical">
-        <TextView
+        android:orientation="vertical"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp">
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mansi Vora"
-            android:textStyle="bold"
-            android:id="@+id/name"
-            android:textColor="@color/lightblue"
-            android:textSize="20sp"/>
-        <TextView
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mansi"
+                android:id="@+id/name"
+                android:layout_gravity="start"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="mansivora2001@gmail.com"
-            android:id="@+id/mail"
-            android:textColor="@color/gray"
-            android:textSize="20sp"/>
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="Present" />
-
-        <!--<ToggleButton
-            android:id="@+id/toggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginRight="10dp"
-            android:layout_gravity="right"
-            android:text="ToggleButton" />-->
-
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/present"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/button_color"
+                android:text="Present"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/absent"
+                android:text="Absent"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/absent"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
     </LinearLayout>
-
-
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
