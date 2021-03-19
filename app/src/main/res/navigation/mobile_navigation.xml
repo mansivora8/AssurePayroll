@@ -35,12 +35,12 @@
         android:label="@string/menu_leave"
         tools:layout="@layout/fragment_leave" />
 
-    <!--<fragment
+    <fragment
         android:id="@+id/nav_payslip"
-        android:name="com.example.assurepayroll.payslip"
+        android:name="com.example.assurepayroll.generate_payslip"
         android:label="@string/menu_payslip"
         tools:layout="@layout/fragment_generate_payslip"
-        />-->
+        />
 
 
 </navigation>

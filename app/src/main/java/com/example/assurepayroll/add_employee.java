@@ -45,8 +45,8 @@ TextView tvstatus;
 Button btnRegister;
 
 //url
-//String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
-String URL="http://192.168.0.157:80/SDP_Payroll/register.php"; //maitri
+String URL="http://192.168.43.231:80/SDP_Payroll/register.php";
+//String URL="http://192.168.0.157:80/SDP_Payroll/register.php"; //maitri
 
 String name,email,dob,joiningDate,accNo,status,state,city,contact;
 
