@@ -41,7 +41,7 @@
             android:textColor="@color/gray"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:text="Amount:"/>
+            android:text="Salary per month:"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,21 +55,70 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:padding="5dp"
-        android:orientation="horizontal">
-        <TextView
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/gray"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Extra leaves:"/>
-        <TextView
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Extra leaves:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="Full"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="Half"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="Sick"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:id="@+id/extra_leaves"
-            android:layout_marginLeft="5dp"
-            android:text="2"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="130dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:text="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:text="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:text="4"/>
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -83,15 +132,50 @@
             android:textColor="@color/gray"
             android:textStyle="bold"
             android:textSize="20dp"
-            android:text="Deduction:"/>
+            android:text="Deduction: "/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:id="@+id/ded_amount"
-            android:layout_marginLeft="5dp"
-            android:text="2000"/>
+            android:id="@+id/full_ded"
+            android:layout_marginLeft="30dp"
+            android:text="1000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/half_ded"
+            android:layout_marginLeft="20dp"
+            android:text="700"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/sick_ded"
+            android:layout_marginLeft="20dp"
+            android:text="500"/>
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:padding="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Total Deduction: "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:id="@+id/final_ded_amount"
+                android:layout_marginLeft="5dp"
+                android:text="7100"/>
+        </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,7 +195,7 @@
             android:textSize="20dp"
             android:id="@+id/salary"
             android:layout_marginLeft="5dp"
-            android:text="13,000"/>
+            android:text="7900"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -124,6 +208,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:layout_marginBottom="10dp"
             android:textSize="15dp"
             android:text="Pay"/>
     </LinearLayout>
