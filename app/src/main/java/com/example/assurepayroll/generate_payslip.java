@@ -1,22 +1,32 @@
 package com.example.assurepayroll;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link generate_payslip#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class generate_payslip extends Fragment {
     RecyclerView payrecyclerview;
+    //private final String URL="http://192.168.0.157:80/SDP_Payroll/generate_payslip.php"; //maitri's URL
+    private final String URL="http://192.168.43.231:80/SDP_Payroll/generate_payslip.php";
+    static final String TAG = "Register";
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,6 +77,20 @@ public class generate_payslip extends Fragment {
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         String[] lang={"Admin","Employee"};
         rv.setAdapter(new PayslipAdapter(lang));
+
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG,response.toString());
+                Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
+            }
+        },new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         return root;
     }
 }
