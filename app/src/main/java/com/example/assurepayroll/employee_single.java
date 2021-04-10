@@ -127,7 +127,7 @@ public class employee_single extends AppCompatActivity {
     }
 
     public void generatepayslip(View view) {
-        Intent i=new Intent(this,payslip.class);
+        Intent i=new Intent(this, payslip_details.class);
         startActivity(i);
     }
 }

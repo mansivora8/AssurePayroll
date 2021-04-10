@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssurePayroll"
         tools:targetApi="n">
-        <activity android:name=".payslip" android:label="Payslip Details"></activity>
+        <activity android:name=".payslip_details" android:label="Payslip Details"></activity>
         <activity
             android:name=".display_payslips"
             android:label="Payslips" />

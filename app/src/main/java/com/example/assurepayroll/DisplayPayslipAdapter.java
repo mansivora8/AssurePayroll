@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +17,7 @@ public class DisplayPayslipAdapter extends RecyclerView.Adapter<DisplayPayslipAd
     @Override
     public payslipviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.displaypayslip_list_item_layout,parent,false);
+        View view=inflater.inflate(R.layout.display_payslip_list_item_layout,parent,false);
         return new payslipviewholder(view);
     }
 

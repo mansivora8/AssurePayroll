@@ -1,21 +1,14 @@
 package com.example.assurepayroll;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link generate_payslip#newInstance} factory method to
@@ -71,26 +64,12 @@ public class generate_payslip extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root= inflater.inflate(R.layout.fragment_generate_payslip, container, false);
+        View root= inflater.from(getParentFragment().getContext()).inflate(R.layout.fragment_generate_payslip, container, false);
         RecyclerView rv=(RecyclerView) root.findViewById(R.id.payslip_list);
         rv.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         String[] lang={"Admin","Employee"};
         rv.setAdapter(new PayslipAdapter(lang));
-
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d(TAG,response.toString());
-                Toast.makeText(getActivity(),response.toString(),Toast.LENGTH_LONG).show();
-            }
-        },new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), error.toString().trim(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
         return root;
     }
 }
