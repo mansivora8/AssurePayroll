@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,10 +25,8 @@ public class PayslipAdapter extends RecyclerView.Adapter<PayslipAdapter.payslipv
     public void onBindViewHolder(@NonNull payslipviewholder holder, int position) {
         /*String name=data[position];
         holder.name.setText(name);
-        String date=data[position];
-        holder.date.setText(date);
-        String amount=data[position];
-        holder.amount.setText(amount);*/
+        String email=data[position];
+        holder.email.setText(email);*/
     }
 
     @Override
@@ -36,12 +35,11 @@ public class PayslipAdapter extends RecyclerView.Adapter<PayslipAdapter.payslipv
     }
 
     public class payslipviewholder extends RecyclerView.ViewHolder{
-        TextView name,deduction,extra_leaves,final_salary,amount;
+        TextView name,email;
         public payslipviewholder(@NonNull View itemView) {
             super(itemView);
             /*name=(TextView) itemView.findViewById(R.id.name);
-            date=(TextView) itemView.findViewById(R.id.date);
-            amount=(TextView) itemView.findViewById(R.id.amount);*/
+            email=(TextView) itemView.findViewById(R.id.mail);*/
         }
     }
 
