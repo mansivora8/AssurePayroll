@@ -27,8 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class employee_single extends AppCompatActivity {
-    //String URL="http://192.168.0.157:80/SDP_Payroll/employee_single.php"; //maitri
-    String URL="http://192.168.43.231:80/SDP_Payroll/employee_single.php";
+    String URL="http://192.168.29.195:80/SDP_Payroll/employee_single.php"; //maitri
+    //String URL="http://192.168.43.231:80/SDP_Payroll/employee_single.php";
     String empId;
     TextView tname,temail,tcontact,tjoining,tdob,tacc,tcity,tState;
     //String name,email,contact,joiningDate,dob,accNo,status,state,city;

@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class employee_list extends AppCompatActivity {
-    //private final String URL="http://192.168.0.157:80/SDP_Payroll/employee_list.php"; //maitri's URL
-    private final String URL="http://192.168.43.231:80/SDP_Payroll/employee_list.php";
+    private final String URL="http://192.168.29.195:80/SDP_Payroll/employee_list.php"; //maitri's URL
+    //private final String URL="http://192.168.43.231:80/SDP_Payroll/employee_list.php";
     static final String TAG = "Register";
     List<EmployeeListData> employeeListDataList;
     RecyclerView recyclerView;
