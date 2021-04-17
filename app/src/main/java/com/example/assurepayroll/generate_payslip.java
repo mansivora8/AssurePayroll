@@ -32,7 +32,8 @@ import java.util.List;
  */
 
 public class generate_payslip extends Fragment {
-    private final String URL="http://192.168.29.195:80/SDP_Payroll/employee_list.php";//maitri
+    private final String URL="http://192.168.43.231:80/SDP_Payroll/employee_list.php";
+    //private final String URL="http://192.168.29.195:80/SDP_Payroll/employee_list.php";//maitri
     static final String TAG = "Register";
     List<EmployeeListData> employeeListDataList;
     RecyclerView recyclerView;

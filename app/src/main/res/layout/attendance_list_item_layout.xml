@@ -42,17 +42,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/present"
                 android:textColor="@color/white"
-                android:backgroundTint="@color/button_color"
+                android:backgroundTint="#228B22	"
                 android:text="Present"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/absent"
-                android:text="Absent"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/absent"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center"/>
         </LinearLayout>
     </LinearLayout>
     </androidx.cardview.widget.CardView>

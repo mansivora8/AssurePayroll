@@ -24,7 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class payslip_details extends AppCompatActivity {
-    String URL="http://192.168.29.195:80/SDP_Payroll/payslip_details.php"; //maitri
+    String URL="http://192.168.43.231:80/SDP_Payroll/payslip_details.php";
+    //String URL="http://192.168.29.195:80/SDP_Payroll/payslip_details.php"; //maitri
 
     String emp_name;
     TextView name;

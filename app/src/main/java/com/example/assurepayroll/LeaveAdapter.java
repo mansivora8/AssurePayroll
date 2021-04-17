@@ -30,10 +30,10 @@ import java.util.Map;
 
 public class LeaveAdapter extends RecyclerView.Adapter<LeaveAdapter.leaveviewholder> {
 
-   // private final String Grant_URL="http://192.168.43.231:80/SDP_Payroll/grant_leave.php";
- // private final String Deny_URL="http://192.168.43.231:80/SDP_Payroll/deny_leave.php";
-   private final String Grant_URL="http://192.168.29.195:80/SDP_Payroll/grant_leave.php"; //maitri's URL
-    private final String Deny_URL="http:/192.168.29.195:80/SDP_Payroll/deny_leave.php"; //maitri's URL
+   private final String Grant_URL="http://192.168.43.231:80/SDP_Payroll/grant_leave.php";
+ private final String Deny_URL="http://192.168.43.231:80/SDP_Payroll/deny_leave.php";
+   //private final String Grant_URL="http://192.168.29.195:80/SDP_Payroll/grant_leave.php"; //maitri's URL
+    //private final String Deny_URL="http:/192.168.29.195:80/SDP_Payroll/deny_leave.php"; //maitri's URL
     static final String TAG = "Register";
     List<LeavesData> leavesData;
     private Context context;

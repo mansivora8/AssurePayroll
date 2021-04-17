@@ -33,7 +33,8 @@ public class PayslipAdapter extends RecyclerView.Adapter<PayslipAdapter.payslipv
     public PayslipAdapter(String[] data){
         this.data=data;
     }*/
- private final String URL="http://192.168.29.195:80/SDP_Payroll/generate_payslip.php"; //maitri's URL
+ private final String URL="http://192.168.43.231:80/SDP_Payroll/generate_payslip.php";
+ //private final String URL="http://192.168.29.195:80/SDP_Payroll/generate_payslip.php"; //maitri's URL
     List<EmployeeListData> employee_list;
     private Context context;
     LayoutInflater inflater;

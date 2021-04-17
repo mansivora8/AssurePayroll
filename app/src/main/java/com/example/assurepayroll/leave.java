@@ -31,8 +31,8 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class leave extends Fragment {
-  //private final String URL="http://192.168.43.231:80/SDP_Payroll/leave_admin.php";
-    private final String URL="http://192.168.29.195/SDP_Payroll/leave_admin.php"; //maitri's URL
+  private final String URL="http://192.168.43.231:80/SDP_Payroll/leave_admin.php";
+  //  private final String URL="http://192.168.29.195/SDP_Payroll/leave_admin.php"; //maitri's URL
     static final String TAG = "Register";
     List<LeavesData> leavesDataList;
     RecyclerView recyclerView;
