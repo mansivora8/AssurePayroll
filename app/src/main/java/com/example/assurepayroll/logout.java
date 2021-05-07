@@ -1,12 +1,13 @@
 package com.example.assurepayroll;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +54,9 @@ public class logout extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Intent intent = new Intent(getActivity(),MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(getActivity(),"You are logged out",Toast.LENGTH_SHORT).show();
     }
 
     @Override
